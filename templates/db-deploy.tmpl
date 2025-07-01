@@ -1,4 +1,13 @@
+#!/bin/bash
 sudo apt update
 sudo apt install git mysql-client -y
-git clone -b vp-rem https://github.com/devopshydclub/vprofile-project.git
-mysql -h ${rds-endpoint} -u ${dbuser} --password=${dbpass} accounts --ssl-mode=DISABLED < /home/ubuntu/vprofile-project/src/main/resources/db_backup.sql
+
+# Clone the repo to ubuntu's home
+cd /home/ubuntu
+sudo git clone -b vp-rem https://github.com/devopshydclub/vprofile-project.git
+
+# Ensure correct permissions
+sudo chown -R ubuntu:ubuntu /home/ubuntu/vprofile-project
+
+# Run the SQL restore
+mysql -h ${rds-endpoint} -u ${dbuser} -p${dbpass} accounts --ssl-mode=DISABLED < /home/ubuntu/vprofile-project/src/main/resources/db_backup.sql
