@@ -14,7 +14,7 @@ This project demonstrates how to provision AWS infrastructure using **Terraform*
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 ## ✅ Terraform Init
 ![Terraform Init](Screenshots/terraform-init-output.png)
@@ -30,3 +30,13 @@ This project demonstrates how to provision AWS infrastructure using **Terraform*
 
 ## ✅ Full Project Structure
 ![Full Project](Screenshots/project-structure.png)
+
+---
+
+## Learning Outcome
+
+- Wrote Infrastructure as Code (IaC) using Terraform
+- Created EC2, VPC, and S3 resources on AWS
+- Managed Terraform remote state using S3 backend
+- Practiced Terraform commands: `init`, `plan`, `apply`, `destroy`
+
